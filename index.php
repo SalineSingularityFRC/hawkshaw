@@ -3,19 +3,16 @@
 	<head>
 		<title>Hawkshaw</title>
 		<meta charset="utf-8"/>
-		<style>
-		table {
-			border-collapse: collapse;
-		}
-
-		th, td {
-			border: 1px solid black;
-			padding: 10px;
-		}
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
 	</head>
 	<body>
 		<h1>Hawkshaw</h1>
+
+		<span><a href="/add.html">add item</a> <a href="/del.html">delete item</a></span>
+
+		<br/><br/>
+
+		<!-- this is where the database data goes -->
 		<table id="db-table">
 			<!-- headers -->
 			<tr>
@@ -43,15 +40,21 @@
 
 			// deconstruct a tag object
 			function tag($a) {
+				echo '<td>';
 				foreach ($a as $i) {
 					// add a background color according to the color attribute
-					echo '<td style="background-color:' . $i['color'] . ';">' . $i['name'] . '</td>';
+				       	echo '<span class="tag" style="background-color:' . $i['color'] . ';">' . $i['name'] . '</span>';
 				}
+				echo '</td>';
 			}
 
 			// deconstruct a parent object
 			function parents($a) {
-				echo '<td>' . join(", ", $a) . '</td>';
+				echo '<td>';
+				foreach ($a as $i) {
+					echo '<a href="#item-' . $i . '">' . $i . '</a> ';
+				}
+				echo '</td>';
 			}
 
 			$txt = file_get_contents('./data.json');
@@ -59,6 +62,11 @@
 
 			// generate the rows in the html table from the json data
 			foreach ($obj as $i) {
+				// skip "deleted" entries
+				if ($i['deleted']) {
+					continue;
+				}
+
 				echo '<tr>';
 				id($i['id']);
 				cell($i['type']);
@@ -70,7 +78,5 @@
 			
 			?>
 		</table>
-
-		<a href="/add.html">add item</a>
 	</body>
 </html>

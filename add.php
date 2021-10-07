@@ -14,10 +14,13 @@
 
 		// process the parents text
 		// TODO : handle if an input is not an int
-		$parents = explode(",", $_POST['parents']);
-		echo $parents;
-		// convert to ints
-		$parents = array_map('intval', $parents);
+		if (count($_POST['parents']) != 0) {
+			$parents = explode(",", $_POST['parents']);
+			// convert to ints
+			$parents = array_map('intval', $parents);
+		} else {
+			$parents = null;
+		}
 
 		// process the tags
 		// TODO : slim this down
@@ -51,7 +54,8 @@
 			"name" => $_POST['name'],
 			"type" => $_POST['type'],
 			"tags" => $tags,
-			"parents" => $parents
+			"parents" => $parents,
+			"deleted" => false
 		);
 
 		array_push($obj, $a);
