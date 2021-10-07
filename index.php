@@ -78,5 +78,7 @@
 			
 			?>
 		</table>
+
+		<h6><i>made w/ luv by the <a href="https://github.com/SalineSingularityFRC/hawkshaw" target="_blank">saline singularity</a> scouting team &lsaquo;3</i></h6>
 	</body>
 </html>
