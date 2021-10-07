@@ -1,0 +1,17 @@
+HAWKSHAW
+	A parts tracker designed for the Saline Singularity FRC team.
+
+BUILDING
+	This is written in PHP, and tested on Ubuntu with PHP7.
+
+	For this to do anything, you'll need to populate a `data.json` file,
+	which will serve as the "database".
+
+	Once you have a data file, it should be able to start with a simple
+	% php -S 0.0.0.0:80
+	Which will start the server at your IP on port 80.
+
+CONTACT / BUGS
+	To submit a git patch or file an issue, please send an email to Skylar
+	Bleed at skylarbleed@protonmail.ch. Patches welcome and encouraged! (I
+	do not know how to write PHP so I'll take all the help I can get).
