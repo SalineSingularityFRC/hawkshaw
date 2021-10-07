@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hawkshaw :: Add Part</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<h1>Add item to database</h1>
+		<form action="mod.php" method="post">
+			Name: <input type="text" name="name"><br/><br/>
+			
+			<!-- radio input for the type -->
+			Type:<br/>
+			<input type="radio" id="rpart" name="type" value="part">
+			<label for="rpart">part</label>
+			<input type="radio" id="rasm" name="type" value="assembly">
+			<label for="rasm">assembly</label>
+			<br/><br/>
+
+			<!-- radios for status -->
+			Tags:<br/>
+			<input type="checkbox" id="todo" name="todo" value="on">
+			<label for="todo">todo</label>
+			<input type="checkbox" id="progress" name="progress" value="on">
+			<label for="progress">in progress</label>
+			<input type="checkbox" id="done" name="done" value="on">
+			<label for="done">done</label>
+			<br/><br/>
+
+			<!-- simple text input for parents -->
+			Parents (command separated): <input type="text" name="parents"><br/>
+			<input type="submit">
+		</form>
+	</body>
+</html>

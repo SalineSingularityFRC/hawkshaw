@@ -70,5 +70,7 @@
 			
 			?>
 		</table>
+
+		<a href="/add.html">add item</a>
 	</body>
 </html>
